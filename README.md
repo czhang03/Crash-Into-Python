@@ -29,7 +29,14 @@ and pull and push if you need to.
 All are instructions here:
 https://guides.github.com/activities/forking/
 
-Notice on windows, if you are using git (not GitHub desktop), 
-you want to clone the HTTPS link as opposed to SSH link, 
-since there are [git-credential-manager](https://github.com/microsoft/Git-Credential-Manager-for-Windows/wiki#how-to-use) that will take care of all the credential management for you.
-It will pop up a login dialogue when you try to push to GitHub. 
+**Notice**:
+- if you are using Pycharm or VSCode, both of them has builtin git features, that will help you get started a little easier
+  - pycharm: https://www.jetbrains.com/help/pycharm/using-git-integration.html
+  - vscode: https://code.visualstudio.com/Docs/editor/versioncontrol#_git-support
+- on windows, if you are using git (not GitHub desktop, or the git integration in vscode and pycharm), 
+  you want to clone the HTTPS link as opposed to SSH link, 
+  since there are [git-credential-manager](https://github.com/microsoft/Git-Credential-Manager-for-Windows/wiki#how-to-use) that will take care of all the credential management for you.
+  It will pop up a login dialogue when you try to push to GitHub. 
+  For other system, you will need to clone the SSL link, and setup ssl for your system:https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account
+
+
