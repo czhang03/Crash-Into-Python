@@ -26,7 +26,7 @@ You need to get a GitHub account, fork this repo.
 Then you clone your forked repo to your local,
 and pull and push if you need to.
 
-All are instructions here:
+All instructions are here:
 https://guides.github.com/activities/forking/
 
 Notice on windows, if you are using git (not GitHub desktop), 
