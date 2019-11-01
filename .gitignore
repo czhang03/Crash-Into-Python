@@ -102,3 +102,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# ignore the idea folder entirely
+# in real project you probably want to use suggested templates
+.idea
