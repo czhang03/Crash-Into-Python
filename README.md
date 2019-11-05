@@ -6,7 +6,8 @@ This tutorial moves relatively fast,
 and this is intended to be a "crash course",
 which means:
 - if you are a good coder and want to learn python fast
-  you should be able fly through the tutorial without much trouble.
+  you should be able to fly through this tutorial without much trouble.
+  After that you should have some idea about basic porgramming in python.
 - if you are a beginner:
   you are going to be confused and have many questions,
   this is **normal** and **intended**, 
