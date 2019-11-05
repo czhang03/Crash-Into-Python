@@ -559,6 +559,21 @@ def my_map_using_fold(func, lst):
         lst=lst
     )
 
+#########################################################
+# FINAL COMMENT:
+# List comprehension, which are sugar for `map` and `filter` (will see in excercise) function,
+# is the most important construct to work with list.
+# `map` gives you a way to perform operation on list element safely and clearly
+# `filter` provides you a way to discard unwanted elements. 
+# Both functions are very important (and almost all you need) to process collective data
+# and processing collective data are one of the most important topics in programming, 
+# because programming is all about processing large quantity of datas.
+#
+# foldl is super powerful, useful, and efficient.
+# But due to its unreadablity, is rarely used in real-world programming,
+# but are heavily used in library implementation, since it is consice and efficient.
+# We are not concerned about library implementation, therefore we will only use foldl for excercises.
+
 
 if __name__ == '__main__':
     # test if the examples in the documentation work
