@@ -333,3 +333,12 @@ def prime_test(n):
     :return a boolean to indicate if `n` is a prime.
     """
     pass
+
+
+if __name__ == '__main__':
+    # test if the examples work
+    import doctest
+
+    doctest.testmod()
+
+    # add your own tests here:
