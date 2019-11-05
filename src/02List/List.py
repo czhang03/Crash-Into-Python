@@ -327,6 +327,9 @@ def even_better_is_northeast_dummy(location_list):
 # therefore python nicely provided us a syntactic sugar for `map` called list comprehension
 # (list comprehension is actually more powerful than map)
 
+# NOTICE: although list comprehension looks like a for loop,
+# but list comprehension is "pure", in that it does not mutate any inputs.
+
 def good_double_list(l):
     """ Doubling every element in the input list l
 
