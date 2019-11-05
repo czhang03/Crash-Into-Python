@@ -565,8 +565,8 @@ def my_map_using_fold(func, lst):
 # is the most important construct to work with list.
 # `map` gives you a way to perform operation on list element safely and clearly
 # `filter` provides you a way to discard unwanted elements. 
-# Both functions are very important (and almost all you need) to process collective data
-# and processing collective data are one of the most important topics in programming, 
+# Both functions are very important (and almost all you need) to process collective data.
+# And processing collective data are one of the most important topics in programming, 
 # because programming is all about processing large quantity of datas.
 #
 # foldl is super powerful, useful, and efficient.
