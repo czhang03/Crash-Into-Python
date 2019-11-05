@@ -560,4 +560,3 @@ def my_map_using_fold(func, lst):
         # perform the previous operation on the input list
         lst=lst
     )
-
