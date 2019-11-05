@@ -81,9 +81,9 @@ def list_sample():
 
 def bad_double_list(l):
     """ Doubling every element in the input list l
-    >>>> bad_double_list([1, 2, 3])
+    >>> bad_double_list([1, 2, 3])
     will return [2, 4, 6]
-    >>>> bad_double_list([-2, 0, 1.3])
+    >>> bad_double_list([-2, 0, 1.3])
     will return [-4, 0, 2.6]
 
     :param l: the input list
@@ -178,9 +178,9 @@ def my_map(func, l):
 
 def better_double_list(l):
     """ Doubling every element in the input list l
-    >>>> better_double_list([1, 2, 3])
+    >>> better_double_list([1, 2, 3])
     will return [2, 4, 6]
-    >>>> better_double_list([-2, 0, 1.3])
+    >>> better_double_list([-2, 0, 1.3])
     will return [-4, 0, 2.6]
 
     :param l: the input list
@@ -259,9 +259,9 @@ def better_is_northeast_dummy(location_list):
 
 def even_better_double_list(l):
     """ Doubling every element in the input list l
-    >>>> even_better_double_list([1, 2, 3])
+    >>> even_better_double_list([1, 2, 3])
     will return [2, 4, 6]
-    >>>> even_better_double_list([-2, 0, 1.3])
+    >>> even_better_double_list([-2, 0, 1.3])
     will return [-4, 0, 2.6]
 
     :param l: the input list
@@ -324,9 +324,9 @@ def even_better_is_northeast_dummy(location_list):
 
 def good_double_list(l):
     """ Doubling every element in the input list l
-    >>>> good_double_list([1, 2, 3])
+    >>> good_double_list([1, 2, 3])
     will return [2, 4, 6]
-    >>>> good_double_list([-2, 0, 1.3])
+    >>> good_double_list([-2, 0, 1.3])
     will return [-4, 0, 2.6]
 
     :param l: the input list
@@ -366,7 +366,7 @@ def good_is_northeast_dummy(location_list):
     :param location_list: list of location you need to analyze
     """
     # notice you don't need the parentheses
-    # >>>> [1 if loc == "northeastern" else 0 for loc in location_list]
+    # >>> [1 if loc == "northeastern" else 0 for loc in location_list]
     # will also work.
     return [(1 if loc == "northeastern" else 0) for loc in location_list]
 
