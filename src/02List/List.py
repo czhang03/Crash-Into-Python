@@ -84,7 +84,6 @@ def bad_double_list(l):
 
     >>> bad_double_list([1, 2, 3])
     [2, 4, 6]
-
     >>> bad_double_list([-2, 0, 1.3])
     [-4, 0, 2.6]
 
@@ -182,7 +181,6 @@ def better_double_list(l):
 
     >>> better_double_list([1, 2, 3])
     [2, 4, 6]
-
     >>> better_double_list([-2, 0, 1.3])
     [-4, 0, 2.6]
 
@@ -265,7 +263,6 @@ def even_better_double_list(l):
 
     >>> even_better_double_list([1, 2, 3])
     [2, 4, 6]
-
     >>> even_better_double_list([-2, 0, 1.3])
     [-4, 0, 2.6]
 
@@ -335,7 +332,6 @@ def good_double_list(l):
 
     >>> good_double_list([1, 2, 3])
     [2, 4, 6]
-
     >>> good_double_list([-2, 0, 1.3])
     [-4, 0, 2.6]
 
@@ -404,7 +400,6 @@ def bad_sum_list(int_lst):
 
     >>> bad_sum_list([1, 2, 3])
     6
-
     >>> bad_sum_list([1, 1, 1])
     3
 
@@ -423,7 +418,6 @@ def bad_prod_list(int_lst):
 
     >>> bad_prod_list([1, 2, 4])
     8
-
     >>> bad_prod_list([2, 3, 4])
     24
 
@@ -479,7 +473,6 @@ def sum_list(int_lst):
 
     >>> sum_list([1, 2, 3])
     6
-
     >>> sum_list([1, 1, 1])
     3
 
@@ -501,7 +494,6 @@ def prod_list(int_lst):
 
     >>> prod_list([1, 2, 4])
     8
-
     >>> prod_list([2, 3, 4])
     24
 
