@@ -81,10 +81,12 @@ def list_sample():
 
 def bad_double_list(l):
     """ Doubling every element in the input list l
+
     >>> bad_double_list([1, 2, 3])
-    will return [2, 4, 6]
+    [2, 4, 6]
+
     >>> bad_double_list([-2, 0, 1.3])
-    will return [-4, 0, 2.6]
+    [-4, 0, 2.6]
 
     :param l: the input list
     """
@@ -116,10 +118,9 @@ def bad_add_weight_to_list(l, weight):
 
 def bad_is_0_dummy(l):
     """ create a {True, False} dummy list
-    where
+
     if the element in the original list is 0, the element of the return list is True
     otherwise, the element of the return list is False
-
     :param l: the input list
     """
     # to avoid modifying l, we create a new list, the resulting list
@@ -134,12 +135,12 @@ def bad_is_0_dummy(l):
 
 def bad_is_northeast_dummy(location_list):
     """ create a {1, 0} dummy list
-    where
+
     if the element in the original list is "northeast", the element of the return list is 1
     otherwise, the element of the return list is 0
+
     >>> bad_is_northeast_dummy(["southeast", "northeast", "southwest", "southwest", "northeast"])
-    will return
-    >>> [0, 1, 0, 0, 1]
+    [0, 1, 0, 0, 1]
 
     :param location_list: list of location you need to analyze
     """
@@ -178,10 +179,12 @@ def my_map(func, l):
 
 def better_double_list(l):
     """ Doubling every element in the input list l
+
     >>> better_double_list([1, 2, 3])
-    will return [2, 4, 6]
+    [2, 4, 6]
+
     >>> better_double_list([-2, 0, 1.3])
-    will return [-4, 0, 2.6]
+    [-4, 0, 2.6]
 
     :param l: the input list
     """
@@ -231,12 +234,12 @@ def better_is_0_dummy(l):
 
 def better_is_northeast_dummy(location_list):
     """ create a {1, 0} dummy list
-    where
+
     if the element in the original list is "northeast", the element of the return list is 1
     otherwise, the element of the return list is 0
+
     >>> better_is_northeast_dummy(["southeast", "northeast", "southwest", "southwest", "northeast"])
-    will return
-    >>> [0, 1, 0, 0, 1]
+    [0, 1, 0, 0, 1]
 
     :param location_list: list of location you need to analyze
     """
@@ -259,10 +262,12 @@ def better_is_northeast_dummy(location_list):
 
 def even_better_double_list(l):
     """ Doubling every element in the input list l
+
     >>> even_better_double_list([1, 2, 3])
-    will return [2, 4, 6]
+    [2, 4, 6]
+
     >>> even_better_double_list([-2, 0, 1.3])
-    will return [-4, 0, 2.6]
+    [-4, 0, 2.6]
 
     :param l: the input list
     """
@@ -300,12 +305,12 @@ def even_better_is_0_dummy(l):
 
 def even_better_is_northeast_dummy(location_list):
     """ create a {1, 0} dummy list
-    where
+
     if the element in the original list is "northeast", the element of the return list is 1
     otherwise, the element of the return list is 0
+
     >>> better_is_northeast_dummy(["southeast", "northeast", "southwest", "southwest", "northeast"])
-    will return
-    >>> [0, 1, 0, 0, 1]
+    [0, 1, 0, 0, 1]
 
     :param location_list: list of location you need to analyze
     """
@@ -324,10 +329,12 @@ def even_better_is_northeast_dummy(location_list):
 
 def good_double_list(l):
     """ Doubling every element in the input list l
+
     >>> good_double_list([1, 2, 3])
-    will return [2, 4, 6]
+    [2, 4, 6]
+
     >>> good_double_list([-2, 0, 1.3])
-    will return [-4, 0, 2.6]
+    [-4, 0, 2.6]
 
     :param l: the input list
     """
@@ -359,14 +366,14 @@ def good_is_northeast_dummy(location_list):
     where
     if the element in the original list is "northeast", the element of the return list is 1
     otherwise, the element of the return list is 0
+
     >>> good_is_northeast_dummy(["southeast", "northeast", "southwest", "southwest", "northeast"])
-    will return
-    >>> [0, 1, 0, 0, 1]
+    [0, 1, 0, 0, 1]
 
     :param location_list: list of location you need to analyze
     """
     # notice you don't need the parentheses
-    # >>> [1 if loc == "northeastern" else 0 for loc in location_list]
+    # `[1 if loc == "northeastern" else 0 for loc in location_list]`
     # will also work.
     return [(1 if loc == "northeastern" else 0) for loc in location_list]
 
@@ -393,12 +400,11 @@ def bad_sum_list(int_lst):
     """ sums all the elements of the list
 
     >>> bad_sum_list([1, 2, 3])
-    should return
-    >>> 6
-    and
-     >>> bad_sum_list([1, 1, 1])
-    should return
-    >>> 3
+    6
+
+    >>> bad_sum_list([1, 1, 1])
+    3
+
     :param int_lst: a list of integer
     :return: the sum of all the element in that list
     """
@@ -413,12 +419,11 @@ def bad_prod_list(int_lst):
     """ times all the elements of the list
 
     >>> bad_prod_list([1, 2, 4])
-    should return
-    >>> 8
-    and
-     >>> bad_prod_list([2, 3, 4])
-    should return
-    >>> 24
+    8
+
+    >>> bad_prod_list([2, 3, 4])
+    24
+
     :param int_lst: a list of integer
     :return: the product of all the element in the list
     """
@@ -470,12 +475,11 @@ def sum_list(int_lst):
     """ sums all the elements of the list
 
     >>> sum_list([1, 2, 3])
-    should return
-    >>> 6
-    and
-     >>> sum_list([1, 1, 1])
-    should return
-    >>> 3
+    6
+
+    >>> sum_list([1, 1, 1])
+    3
+
     :param int_lst: a list of integer
     :return: the sum of all the element in that list
     """
@@ -493,12 +497,11 @@ def prod_list(int_lst):
     """ times all the elements of the list
 
     >>> prod_list([1, 2, 4])
-    should return
-    >>> 8
-    and
-     >>> prod_list([2, 3, 4])
-    should return
-    >>> 24
+    8
+
+    >>> prod_list([2, 3, 4])
+    24
+
     :param int_lst: a list of integer
     :return: the product of all the element in the list
     """

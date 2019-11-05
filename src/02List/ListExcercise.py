@@ -10,13 +10,12 @@ def filter_index_operation(condition, lst):
 
     Python has a built in function called `filter` that behave the same as this function
     the filter function will remove any element that does not satisfy the condition
+
     >>> filter_index_operation(lambda n: n > 0, [-1, 1, -2, 3])
-    will return
-    >>> [1, 3]
-    and
+    [1, 3]
     >>> filter_index_operation(lambda n: 10 % n == 0 , [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
-    will return
-    >>> [1, 2, 5, 10]
+    [1, 2, 5, 10]
+
     The previous code are just factors of 10
     :param condition: a function take each element of the list to a boolean
     :param lst: the input list to be filtered
@@ -30,13 +29,12 @@ def filter_using_foldl(condition, lst):
 
     Python has a built in function called `filter` that behave the same as this function
     the filter function will remove any element that does not satisfy the condition
+
     >>> filter_using_foldl(lambda n: n > 0, [-1, 1, -2, 3])
-    will return
-    >>> [1, 3]
-    and
+    [1, 3]
     >>> filter_using_foldl(lambda n: 10 % n == 0 , [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
-    will return
-    >>> [1, 2, 5, 10]
+    [1, 2, 5, 10]
+
     The previous code are just factors of 10
     :param condition: a function take each element of the list to a boolean
     :param lst: the input list to be filtered
@@ -61,12 +59,12 @@ def all_using_index(bool_list):
 
     Python has a built in function called `all` that behave the same as this function
     This checks if a list is all True
+
     >>> all_using_index([True, True, False, True])
-    will return
-    >>> False
+    False
     >>> all_using_index([True, True])
-    will return
-    >>> True
+    True
+
     :param bool_list: a boolean list to check
     :return: if the input `bool_list` is all true
     """
@@ -78,12 +76,12 @@ def all_using_foldl(bool_list):
 
     Python has a built in function called `all` that behave the same as this function
     This checks if a list is all True
+
     >>> all_using_foldl([True, True, False, True])
-    will return
-    >>> False
+    False
     >>> all_using_foldl([True, True])
-    will return
-    >>> True
+    True
+
     :param bool_list: a boolean list to check
     :return: if the input `bool_list` is all true
     """
@@ -95,12 +93,12 @@ def all_using_any(bool_list):
 
     Python has a built in function called `all` that behave the same as this function
     This checks if a list is all True
+
     >>> all_using_foldl([True, True, False, True])
-    will return
-    >>> False
+    False
     >>> all_using_foldl([True, True])
-    will return
-    >>> True
+    True
+
     :param bool_list: a boolean list to check
     :return: if the input `bool_list` is all true
     """
@@ -111,16 +109,14 @@ def zip_with(func, lst1, lst2):
     """This function combines the corresponding element of `lst1` and `lst2` with the function `func`
 
     >>> zip_with(lambda a, b: a + b, [1, 2, 3], [10, 20, 30])
-    will return
-    >>> [11, 22, 33]
+    [11, 22, 33]
+
     This function will also discard all the rest of the value of the longer list
     >>> zip_with(lambda a, b: a + b, [1, 2, 3], [10, 20, 30, 40, 50, 100])
-    will return
-    >>> [11, 22, 33]
-    and
+    [11, 22, 33]
     >>> zip_with(lambda a, b: a + b, [10, 20, 30, 40, 50, 100], [1, 2, 3])
-    will return
-    >>> [11, 22, 33]
+    [11, 22, 33]
+
     :param func: take a element of `lst1` and a element of `lst2` and return a element in the result
     :param lst1: the input list 1
     :param lst2: the input list 2
@@ -139,16 +135,15 @@ def zip_using_zip_with(lst1, lst2):
 
     in python there is a builtin function `zip` that behaves exactly like this
     >>> zip_using_zip_with([1, 2, 3], [10, 20, 30])
-    will return
-    >>> [(1, 10), (2, 20), (3, 30)]
+    [(1, 10), (2, 20), (3, 30)]
+
     This function will also discard all the rest of the value of the longer list
+
     >>> zip_using_zip_with([1, 2, 3], [10, 20, 30, 40, 50, 100])
-    will return
-    >>> [(1, 10), (2, 20), (3, 30)]
-    and
+    [(1, 10), (2, 20), (3, 30)]
     >>> zip_using_zip_with([10, 20, 30, 40, 50, 100], [1, 2, 3])
-    will return
-    >>> [(10, 1), (20, 2), (30, 3)]
+    [(10, 1), (20, 2), (30, 3)]
+
     NOTICE: code like `(1, 2)` or `(1, 2, 3)` are called a tuple, they are very similar to lists
     :param lst1: the input list 1
     :param lst2: the input list 2
@@ -162,20 +157,20 @@ def zip_with_using_zip(func, lst1, lst2):
 
     HINT: you can unpack a tuple, just like you expected
     >>> (a, b) = (1, 2)
+
     then a will equal to 1, and b will equal to 2
     You can also unpack tuple in list comprehension
 
     >>> zip_with(lambda a, b: a + b, [1, 2, 3], [10, 20, 30])
-    will return
-    >>> [11, 22, 33]
+    [11, 22, 33]
+
     This function will also discard all the rest of the value of the longer list
+
     >>> zip_with(lambda a, b: a + b, [1, 2, 3], [10, 20, 30, 40, 50, 100])
-    will return
-    >>> [11, 22, 33]
-    and
+    [11, 22, 33]
     >>> zip_with(lambda a, b: a + b, [10, 20, 30, 40, 50, 100], [1, 2, 3])
-    will return
-    >>> [11, 22, 33]
+    [11, 22, 33]
+
     :param func: take a element of `lst1` and a element of `lst2` and return a element in the result
     :param lst1: the input list 1
     :param lst2: the input list 2
@@ -216,9 +211,10 @@ def is_elem(elem, lst):
 
     returns true if there exists any element in lst equals to `elem`:
     >>> is_elem(1, [2, 3, -1])
-    will return False
+    False
     >>> is_elem(True, [False, True, True])
-    will return True
+    True
+
     :param elem: the element to test
     :param lst: see if the `elem` is in here
     :return: a boolean indicating whether `elem` is a element of the `lst`
@@ -233,13 +229,12 @@ def my_enumerate(lst):
     HINT: this is a one line function
 
     python has a builtin function with the same functionality called `enumerate`
+
     >>> my_enumerate([True, False, False])
-    should return
-    >>> [(0, True), (1, False), (2, False)]
-    and
+    [(0, True), (1, False), (2, False)]
     >>> my_enumerate([1, 2, 3])
-    should return
-    >>> [(0, 1), (1, 2), (2, 3)]
+    [(0, 1), (1, 2), (2, 3)]
+
     """
     pass
 
@@ -252,11 +247,10 @@ def find_all(elem, lst):
     HINT: this is a one line function
 
     >>> find_all(10, [1, 2, 3])
-    will return
-    >>> []
+    []
     >>> find_all(10, [1, 10, 3, 10])
-    will return
-    >>> [1, 3]
+    [1, 3]
+
     :param elem: the element to find
     :param lst: to find `elem` in this list
     """
@@ -271,16 +265,12 @@ def slicing(lst, start, end):
     HINT: this is a one line function
 
     >>> slicing([1, 2, 3], 1, 4)
-    will return
-    >>> [2, 3]
-    and
-    >>>slicing([1, 2, 3], -1, 4)
-    will return
-    >>> [1, 2, 3]
-    and
+    [2, 3]
+    >>> slicing([1, 2, 3], -1, 4)
+    [1, 2, 3]
     >>>slicing([1, 2, 3], -1, 2)
-    will return
-    >>> [1, 2]
+    [1, 2]
+
     :param lst: the list to slice
     :param start: the start index (if smaller than 0, then slice from start)
     :param end: the end index (element of this index will not be included in the result,
@@ -301,6 +291,7 @@ def drinking_game(student_matrix):
     and we need to finally divide the score of each major by the number of student participated
 
     >>> drinking_game([("Max", "Math", 5, 1), ("Alex", "CS", 1, 2), ("Bay", "Math", 3, 1), ("Test", "CS", 1, 4)])
+
     then there are 4 students:
     - Max of math major drunk 5 beer and 1 wine, then he will get 5 + 1 * 4 = 9 point
     - Alex of CS major drunk 1 beer and 2 wine, then he will get 1 + 2 * 4 = 9 point
@@ -312,6 +303,7 @@ def drinking_game(student_matrix):
     Therefore the function will return "CS" because CS major has won
 
     >>> drinking_game([("Max", "Math", 5, 1), ("Alex", "Math", 1, 2), ("Bay", "Math", 2, 1), ("Test", "CS", 1, 4)])
+
     then there are 4 students:
     - Max of math major drunk 5 beer and 1 wine, then he will get 5 + 1 * 4 = 9 point
     - Alex of math major drunk 1 beer and 2 wine, then he will get 1 + 2 * 4 = 9 point
