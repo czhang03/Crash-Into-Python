@@ -3,7 +3,7 @@ A python tutorial goes from basic to advanced
 
 ## What This Tutorial is For
 This tutorial moves relatively fast,
-and this is intended to be a "crush course",
+and this is intended to be a "crash course",
 which means:
 - if you are a good coder and want to learn python fast
   you should fly through the tutorial without much trouble
