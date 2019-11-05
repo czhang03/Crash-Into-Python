@@ -569,7 +569,6 @@ def my_map_using_fold(func, lst):
 
 
 if __name__ == '__main__':
-    # test if the examples work
+    # test if the examples in the documentation work
     import doctest
-
     doctest.testmod()

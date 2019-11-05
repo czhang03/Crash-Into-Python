@@ -184,16 +184,12 @@ def zip3_using_zip(lst1, lst2, lst3):
 
     zip3 function zips 3 lists
     >>> zip3_using_zip([1, 2, 3], [10, 20, 30], [2, 4, 6])
-    will return
-    >>> [(1, 10, 2), (2, 20, 4), (3, 30, 6)]
-    This function will also discard all the rest of the value of the longer list
+    [(1, 10, 2), (2, 20, 4), (3, 30, 6)]
     >>> zip3_using_zip([1, 2, 3], [10, 20, 30, 40, 50, 100], [2, 4, 6, 8])
-    will return
-    >>> [(1, 10, 2), (2, 20, 4), (3, 30, 6)]
-    and
+    [(1, 10, 2), (2, 20, 4), (3, 30, 6)]
     >>> zip_using_zip_with([2, 4, 6, 8], [10, 20, 30, 40, 50, 100], [1, 2, 3])
-    will return
-    >>> [(2, 10, 1), (4, 20, 2), (6, 30, 3)]
+    [(2, 10, 1), (4, 20, 2), (6, 30, 3)]
+
     NOTICE: code like `(1, 2)` or `(1, 2, 3)` are called a tuple, they are very similar to lists
     :param lst1: the input list 1
     :param lst2: the input list 2
@@ -291,6 +287,7 @@ def drinking_game(student_matrix):
     and we need to finally divide the score of each major by the number of student participated
 
     >>> drinking_game([("Max", "Math", 5, 1), ("Alex", "CS", 1, 2), ("Bay", "Math", 3, 1), ("Test", "CS", 1, 4)])
+    "CS"
 
     then there are 4 students:
     - Max of math major drunk 5 beer and 1 wine, then he will get 5 + 1 * 4 = 9 point
@@ -303,6 +300,7 @@ def drinking_game(student_matrix):
     Therefore the function will return "CS" because CS major has won
 
     >>> drinking_game([("Max", "Math", 5, 1), ("Alex", "Math", 1, 2), ("Bay", "Math", 2, 1), ("Test", "CS", 1, 4)])
+    "CS"
 
     then there are 4 students:
     - Max of math major drunk 5 beer and 1 wine, then he will get 5 + 1 * 4 = 9 point
@@ -328,6 +326,15 @@ def prime_test(n):
 
     NOTICE: You cannot use a for loop, but list comprehension and all the other functions are allowed
 
+    >>> prime_test(1)
+    False
+    >>> prime_test(2)
+    True
+    >>> prime_test(97)
+    True
+    >>> prime_test(57)
+    False
+
     Being a prime means nothing between 1 and `n` is divisible by `n`, and 1 is not a prime
     :param n: the input to check if it is a prime.
     :return a boolean to indicate if `n` is a prime.
@@ -336,9 +343,8 @@ def prime_test(n):
 
 
 if __name__ == '__main__':
-    # test if the examples work
+    # test if the examples in documentation work
     import doctest
-
     doctest.testmod()
 
     # add your own tests here:
