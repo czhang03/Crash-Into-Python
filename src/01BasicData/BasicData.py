@@ -7,10 +7,10 @@
 ########################################
 # basic syntax for functions
 # `func` is the function name, `arg1` and `arg2` are inputs (arguments)
-def func (arg1, arg2):  
+def func(arg1, arg2):
     # this is the function body
     # the `return` keyword will specify what the function return
-    return arg1   
+    return arg1
 
 
 # sample function
@@ -26,11 +26,12 @@ def add1(n):
 def greatest_even_below(n):
     # the % symbol is the modular, this means if n mod 2 = 0
     if n % 2 == 0:
-        return n 
+        return n
     else:
-        return n-1
+        return n - 1
 
-# compact if statement 
+
+# compact if statement
 # we can compactify the if statement of previous function
 # this is called "inline if statement"
 def another_greatest_even_below(n):
@@ -60,10 +61,10 @@ def my_and(b1, b2):
     if b1:
         # if both b1 and b2 is true  
         if b2:
-            return True 
+            return True
         else:
-            return False 
-    # if b1 is not true then the `and` will not be true
+            return False
+            # if b1 is not true then the `and` will not be true
     # then we don't need to look at b2
     else:
         return False
@@ -74,10 +75,11 @@ def my_and1(b1, b2):
     if b1:
         return b2
     else:
-        return False 
+        return False
+
+    # use inline if
 
 
-# use inline if
 def my_and2(b1, b2):
     # this becames quite unreadable.
     return b2 if b1 else False
@@ -98,7 +100,9 @@ def get_name_from_id_bad(prod_id):
                 return "pear"
             else:
                 return "invalid product id"
-# previous function quickly became unreadable, 
+
+
+# previous function quickly became unreadable,
 # due to too many nested if statements
 # we use elif to flatten it
 def get_name_from_id(prod_id):
@@ -110,4 +114,3 @@ def get_name_from_id(prod_id):
         return "pear"
     else:
         return "invalid product id"
-
