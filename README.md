@@ -1,4 +1,4 @@
-# Crush Into Python 
+# Crash Into Python 
 A python tutorial goes from basic to advanced
 
 ## What This Tutorial is For
