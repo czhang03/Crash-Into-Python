@@ -1,4 +1,4 @@
-from .BasicData import *
+from BasicData import *
 
 
 #########################################
