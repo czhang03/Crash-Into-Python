@@ -39,5 +39,22 @@ https://guides.github.com/activities/forking/
     since there are [git-credential-manager](https://github.com/microsoft/Git-Credential-Manager-for-Windows/wiki#how-to-use) that will take care of all the credential management for you.
      It will pop up a login dialogue when you try to push to GitHub. 
   - For other system, you will need to clone the SSL link, and setup ssl for your system:https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account
+  
+# How Should I Run My Code
 
+### PyCharm
+The easiest way is to use PyCharm and open up the `Crash-Into-Python` folder 
+(NOT the `src` folder or any other folder, that will mess up all the imports)
+then select the file you want to run, 
+and then click the `Run` on the top right menu bar, and run it
 
+### Other
+If you are running using VSCode or command line, you want to add the `Crash-Into-Python` folder 
+into your `PYTHONPATH` environment variable.
+Google online or ask your coder friend about how to temporarily or permanently 
+change environment variable. 
+
+### Why is running code so complicated
+Because Python3's new stupid import system,
+which makes sense for large project, 
+but it makes running small examples like this a pain in the ass.
