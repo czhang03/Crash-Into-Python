@@ -168,14 +168,14 @@ def zip_with_using_zip(func, lst1, lst2):
     then a will equal to 1, and b will equal to 2
     You can also unpack tuple in list comprehension
 
-    >>> zip_with(lambda a, b: a + b, [1, 2, 3], [10, 20, 30])
+    >>> zip_with_using_zip(lambda a, b: a + b, [1, 2, 3], [10, 20, 30])
     [11, 22, 33]
 
     This function will also discard all the rest of the value of the longer list
 
-    >>> zip_with(lambda a, b: a + b, [1, 2, 3], [10, 20, 30, 40, 50, 100])
+    >>> zip_with_using_zip(lambda a, b: a + b, [1, 2, 3], [10, 20, 30, 40, 50, 100])
     [11, 22, 33]
-    >>> zip_with(lambda a, b: a + b, [10, 20, 30, 40, 50, 100], [1, 2, 3])
+    >>> zip_with_using_zip(lambda a, b: a + b, [10, 20, 30, 40, 50, 100], [1, 2, 3])
     [11, 22, 33]
 
     :param func: take a element of `lst1` and a element of `lst2` and return a element in the result
