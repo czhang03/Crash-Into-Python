@@ -194,7 +194,7 @@ def zip3_using_zip(lst1, lst2, lst3):
     [(1, 10, 2), (2, 20, 4), (3, 30, 6)]
     >>> zip3_using_zip([1, 2, 3], [10, 20, 30, 40, 50, 100], [2, 4, 6, 8])
     [(1, 10, 2), (2, 20, 4), (3, 30, 6)]
-    >>> zip_using_zip_with([2, 4, 6, 8], [10, 20, 30, 40, 50, 100], [1, 2, 3])
+    >>> zip3_using_zip([2, 4, 6, 8], [10, 20, 30, 40, 50, 100], [1, 2, 3])
     [(2, 10, 1), (4, 20, 2), (6, 30, 3)]
 
     NOTICE: code like `(1, 2)` or `(1, 2, 3)` are called a tuple, they are very similar to lists
