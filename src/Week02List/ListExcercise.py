@@ -64,6 +64,9 @@ def all_using_index(bool_list):
     False
     >>> all_using_index([True, True])
     True
+    >>> all_using_index([False, False])
+    False
+
 
     :param bool_list: a boolean list to check
     :return: if the input `bool_list` is all true
@@ -81,6 +84,8 @@ def all_using_foldl(bool_list):
     False
     >>> all_using_foldl([True, True])
     True
+    >>> all_using_foldl([False, False])
+    False
 
     :param bool_list: a boolean list to check
     :return: if the input `bool_list` is all true
@@ -94,10 +99,12 @@ def all_using_any(bool_list):
     Python has a built in function called `all` that behave the same as this function
     This checks if a list is all True
 
-    >>> all_using_foldl([True, True, False, True])
+    >>> all_using_any([True, True, False, True])
     False
-    >>> all_using_foldl([True, True])
+    >>> all_using_any([True, True])
     True
+    >>> all_using_any([False, False])
+    False
 
     :param bool_list: a boolean list to check
     :return: if the input `bool_list` is all true
