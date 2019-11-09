@@ -1,4 +1,4 @@
-from List import *
+from src.Week02List.List import *
 
 
 #######################################
@@ -264,7 +264,6 @@ def slicing(lst, start, end):
     [2, 3]
     >>> slicing([1, 2, 3], -1, 4)
     [1, 2, 3]
-    >>> slicing([1, 2, 3], -1, 2)
     [1, 2]
 
     :param lst: the list to slice

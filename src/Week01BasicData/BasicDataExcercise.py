@@ -1,4 +1,4 @@
-from BasicData import *
+from src.Week01BasicData.BasicData import *
 
 
 #########################################
