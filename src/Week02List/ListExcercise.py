@@ -294,7 +294,7 @@ def drinking_game(student_matrix):
     and we need to finally divide the score of each major by the number of student participated
 
     >>> drinking_game([("Max", "Math", 5, 1), ("Alex", "CS", 1, 2), ("Bay", "Math", 3, 1), ("Test", "CS", 1, 4)])
-    "CS"
+    'CS'
 
     then there are 4 students:
     - Max of math major drunk 5 beer and 1 wine, then he will get 5 + 1 * 4 = 9 point
@@ -307,7 +307,7 @@ def drinking_game(student_matrix):
     Therefore the function will return "CS" because CS major has won
 
     >>> drinking_game([("Max", "Math", 5, 1), ("Alex", "Math", 1, 2), ("Bay", "Math", 2, 1), ("Test", "CS", 1, 4)])
-    "CS"
+    'CS'
 
     then there are 4 students:
     - Max of math major drunk 5 beer and 1 wine, then he will get 5 + 1 * 4 = 9 point
