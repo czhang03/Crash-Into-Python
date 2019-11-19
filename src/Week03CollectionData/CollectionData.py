@@ -259,6 +259,45 @@ def set_sample():
     bool_val = 1 in {4, 2, 3, 1}  # `bool_val` will be `True`
     bool_val = 5 in {4, 2, 3, 1}  # `bool_val` will be `False`
 
+    # you can create a set using set comprehension
+    a = {2 * x for x in [1, 2, 3] if x > 1}
+
+
+def frozen_set_sample():
+    """Introduction to Frozen Set
+
+    Frozen Set is just a immutable set, so that all the things about set will be true
+    the reason to introduce frozen set is that in python, you cannot have a set of set (because set is mutable)
+    but you can have a frozen set of frozen set
+    """
+    # set in python, just like set in mathematics
+    # is a unordered collection such that every element is distinct
+    a = frozenset({1, 2, 4, 4, 3})
+    # when you print out `a`, it will show `{1, 2, 3, 4}` because
+    # 1. set is unordered, so that the order of the elements
+    #       may not be the same as the way it is created ({1, 2, 4, 4, 3})
+    # 2. set does not contain duplicated elements
+    #       therefore the duplicated 4 will only appear 1 time in the `a`
+    bool_val = a == frozenset({2, 1, 4, 3})  # bool_val will be true
+
+    # you can get the union and intersection of set using `union` method and `intersection` method
+    a = frozenset({1, 2}).union(frozenset({3, 4, 1}))  # `a` will be {1, 2, 3, 4}
+    a = frozenset({1, 2}).intersection(frozenset({3, 4, 1}))  # `a` will be {1}
+
+    # you can get if a element is in a set using the `in` keyword
+    # (in the same way, you can get if an element is in a list, and also a string)
+    bool_val = 1 in frozenset({4, 2, 3, 1})  # `bool_val` will be `True`
+    bool_val = 5 in frozenset({4, 2, 3, 1})  # `bool_val` will be `False`
+
+    # frozen set can be created using a generator comprehension
+    # (you can also use list comprehension and set comprehension to create frozen set,
+    # but generator is the most efficient)
+    a = frozenset(2 * x for x in [1, 2, 3] if x > 1)
+    # using list and set comprehension also works
+    a = frozenset([2 * x for x in [1, 2, 3] if x > 1])
+    a = frozenset({2 * x for x in [1, 2, 3] if x > 1})
+
+
 # FINAL CONCLUSION:
 #
 # - List
@@ -310,13 +349,14 @@ def set_sample():
 #       - determine if a value or key is in the dict
 #       - change the key of a value
 #
-# - Set
-#   - unordered collection(cannot index or slice), can be generated using dict comprehension
+# - Set (frozen set)
+#   - unordered collection(cannot index or slice), can be generated using set comprehension
 #   - important method:
 #       - union
 #       - intersection
 #       - there are other useful method, but they will mutate the a value, therefore not recommended.
-#   - Fast to (basically everything is fast, but set is a very weak structure in that it don't have many feature)
+#   - Fast to (basically everything is fast,
+#     but `set` is a very weak structure in that has many constrain, like all the element has to be distinct)
 #       - determine if a element is in the set (`1 in {1, 2}`)
 #       - insert element
 #       - delete element
