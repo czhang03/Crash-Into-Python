@@ -192,6 +192,61 @@ def mutable_group_by(criteria: Callable[[A], B], s: FrozenSet[A]) -> FrozenSet[F
     return frozenset(res_list_fsets)
 
 
+def get_word_count_dict(paragraph: str) -> Dict[str, int]:
+    """This function generate the word count for the input paragraph
+
+    The each word in the input paragraph are separated by some spaces,
+    and possibly followed by comma (',') or period ('.') surrounded by quotes ("'" and '"'),
+    and some letter might be capitalized.
+    (common practice is to define a global constant called `PUNCTUATION = {",", ".", "'", '"'}`,
+    but you can define punctuation as a local variable here)
+    We need to remove all the punctuation at the beginning and end of the word,
+    and un-capitalize all the words (`lower` method will do that).
+
+    >>> res1 = get_word_count_dict("A fox jumped.")
+    >>> res1 == {'a': 1, 'fox': 1, 'jumped': 1}
+    True
+    >>> res2 = get_word_count_dict("A fox, a brown fox. The fox is brown.")
+    >>> res2 == {'a': 2, 'brown': 2, 'fox': 3, 'the': 1, 'is': 1}
+    True
+    >>> res3 = get_word_count_dict("weird 'punch' .this ,that,   weird     spacing")
+    >>> res3 == {'weird': 2, 'punch': 1, 'this': 1, 'that': 1, 'spacing': 1}
+    True
+
+    :param paragraph: a paragraph of text to count all the word for
+    :return a dictionary maps all the word to its count
+    """
+    pass
+
+
+def count_pair(paragraph: str, word_pairs: Set[Tuple[str, str]]) -> Dict[Tuple[str, str], Tuple[int, int]]:
+    """count the appearance of pair of words
+
+    In some language, there are some words means the same thing, but are used by different group of people,
+    for example in English: "eggplant" and "aubergine"; "think" and "reckon"; and "grocery" and "supermarket"
+    By counting these words in pair, we can predict what group the author belongs in.
+
+    >>> gb_us_word_pair = {("reckon", "think"), ("aubergine", "eggplant"), ("supermarket", "grocery")}
+    >>> res1 = count_pair("I reckon there should be some aubergine." gb_us_word_pair)
+    >>> res1 == {("reckon", "think"): (1, 0), ("aubergine", "eggplant"): (1, 0), ("supermarket", "grocery"): (0, 0)}
+    True
+    >>> res2 = count_pair("Supermarket is right at the corner, I reckon." gb_us_word_pair)
+    >>> res2 == {("reckon", "think"): (1, 0), ("aubergine", "eggplant"): (0, 0), ("supermarket", "grocery"): (1, 0)}
+    True
+    >>> res3 = count_pair("Gonna get some grocery." gb_us_word_pair)
+    >>> res3 == {("reckon", "think"): (0, 0), ("aubergine", "eggplant"): (0, 0), ("supermarket", "grocery"): (0, 1)}
+    True
+    >>> res4 = count_pair("" gb_us_word_pair)
+    >>> res4 == {("reckon", "think"): (0, 0), ("aubergine", "eggplant"): (0, 0), ("supermarket", "grocery"): (0, 0)}
+    True
+
+    :param paragraph: a paragraph of text
+    :param word_pairs: a list of pair of word to count.
+    :return: a dictionary that maps the pair of words to their counts (also a pair)
+    """
+    pass
+
+
 if __name__ == '__main__':
     # test if the examples in documentation work
     import doctest
