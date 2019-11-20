@@ -61,9 +61,8 @@ def list_to_gen(l: List[A]) -> Iterator[int]:
 
 
 def generator_zip(gen1: Iterator[int], gen2: Iterator[int]) -> Iterator[int]:
-    """zips two generator, it is okay to mutate the value of gen1 and gen2
+    """python zip can zip two generator, and when iterated over, will remove all the elements in both
 
-    in python there is a builtin function `zip` that behaves exactly like this
     >>> list(generator_zip(list_to_gen([1, 2, 3]), list_to_gen([10, 20, 30])))
     [(1, 10), (2, 20), (3, 30)]
     >>> list(generator_zip(list_to_gen([1, 2, 3]), list_to_gen([10, 20, 30, 40])))
@@ -75,7 +74,7 @@ def generator_zip(gen1: Iterator[int], gen2: Iterator[int]) -> Iterator[int]:
     :param gen2: the second generator to input
     :return: a generator of tuple containing the corresponding element of `gen1` and `gen2`
     """
-    pass
+    return zip(gen1, gen2)
 
 
 def dict_zip_via_key(d1: Dict[Key, Val1], d2: Dict[Key, Val2]) -> Dict[Key, Tuple[Val1, Val2]]:
