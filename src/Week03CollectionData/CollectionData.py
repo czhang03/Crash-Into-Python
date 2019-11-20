@@ -306,7 +306,11 @@ def frozen_set_sample():
 # FINAL CONCLUSION:
 #
 # - List
-#   - ordered collection, can be generated using comprehension
+#   - Construction
+#       - explicit construction, like `[1, 2, 3]`
+#       - can be generated using list comprehension
+#   - Property and constrain:
+#       - Ordered collection (can be sliced and indexed)
 #   - Important methods:
 #       - count (`a.count(1)`, this will count how many 1 in `a`)
 #       - all the other method will mutate some value, therefore are all not recommended to use
@@ -323,7 +327,10 @@ def frozen_set_sample():
 #       - insert element in the middle
 #
 # - String
-#   - ordered collection, cannot be generated using comprehension
+#   - Construction
+#       - explicit construction, like `"test"`
+#   - Property and constrain:
+#       - Ordered collection (can be sliced and indexed)
 #   - Important methods
 #       - split
 #       - strip
@@ -332,15 +339,28 @@ def frozen_set_sample():
 #   - performance-wise exactly the same as a list
 #
 # - Generator
-#   - ordered collection, can be generated using generator comprehension
-#   - Memory efficient, but disappear after being iterated over
-#   - Good rule of thumb is not to assign name to it
+#   - Construction
+#       - can be generated using generator comprehension
+#   - Property and constrain:
+#       - Ordered collection, but cannot be sliced or indexed
+#       - but disappears after being iterated over (basically apply any operation on it will change its value)
+#       - Good rule of thumb is not to assign name to it
+#   - Memory efficient
 #   - No method that are useful, this is basically a memory efficient alternative to list
-#   - Any operation on it (remove, insert etc) is not recommended, since they can easily lead to unwanted consequence,
-#       only operation that is good is to iterate over the entirety of it.
+#       - generator is useful to construct one use lists. (see example in generator and frozen set)
 #
 # - Dict
-#   - unordered collection (cannot index or slice), can be generated using dict comprehension
+#   - Construction
+#       - explicit construction, like  `{1: "test", 2: "test2"}`
+#       - dict comprehension
+#   - Property and constrain:
+#       - unordered collection, cannot be sliced, but can be indexed using key
+#       - keys needs to be distinct
+#       - key needs to be "hashable" (basically means immutable at this point),
+#           This means list, set, dict cannot be used as key, but frozenset, string, int, tuple can.
+#       - no constrain on values, anything can be a value.
+#       - fun fact: you can use functions as key, but you cannot index the dict:
+#           `{lambda x: x: "", lambda x: x + 1: ""}[lambda x: x]` will give you an error
 #   - Important Methods:
 #       - keys (get all the keys)
 #       - values (get all the values)
@@ -355,7 +375,16 @@ def frozen_set_sample():
 #       - change the key of a value
 #
 # - Set (frozen set)
-#   - unordered collection(cannot index or slice), can be generated using set comprehension
+#   - Construction
+#       - explicit construction, like  `{1, 2}`
+#       - set comprehension or the function `frozenset` followed by a generator comprehension
+#   - Property and constrain:
+#       - unordered collection, cannot be sliced or indexed
+#       - elements needs to be distinct
+#       - elements needs to be "hashable" (basically means immutable at this point),
+#           This means list, set, dict cannot be set elements, but frozenset, string, int, tuple can.
+#       - fun fact: you can use functions as elements, but you cannot test if the function is in the set:
+#           `(lambda x: x) in {lambda x: x}` will give you false.
 #   - important method:
 #       - union
 #       - intersection
