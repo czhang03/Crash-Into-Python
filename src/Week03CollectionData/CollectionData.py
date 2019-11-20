@@ -3,7 +3,7 @@ from typing import List, Dict, Callable, Tuple, TypeVar
 
 #########################################################
 # we will cover collection data structure,
-# such as string, tuple, dict, set in python.
+# such as string, dict, set in python.
 # we will also cover type annotation, and methods
 
 
@@ -356,7 +356,7 @@ def frozen_set_sample():
 #       - intersection
 #       - there are other useful method, but they will mutate the a value, therefore not recommended.
 #   - Fast to (basically everything is fast,
-#     but `set` is a very weak structure in that has many constrain, like all the element has to be distinct)
+#     but `set` is a very weak structure with many constrains, like all the element has to be distinct)
 #       - determine if a element is in the set (`1 in {1, 2}`)
 #       - insert element
 #       - delete element
