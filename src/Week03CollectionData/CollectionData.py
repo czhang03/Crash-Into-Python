@@ -139,6 +139,8 @@ new_operation_on_files("10")
 # From now on, we will require everyone to put type annotation on every function definition.
 
 
+#########################################################
+# Dict
 def dict_sample() -> None:
     """A dictionary is a structure that maps a key into a value
 
@@ -154,7 +156,8 @@ def dict_sample() -> None:
     dict2 = {1: "test1", 2: "test2", 3: "test3"},
     dict3 = {1: lambda x: x + 1, 2: lambda x: 2 * x, 3: lambda x: x ** 2}
 
-    # we can annotate the type of a variable if we want
+    # we can annotate the type of a variable if we want 
+    # (everything between `dict4` and `= {` is the type annotation for `dict4`)
     # but it is customary to only annotate the function definition
     # (it is sometime useful to annotate the type of variables)
     # here we are saying that dict4 is a
@@ -200,6 +203,8 @@ def dict_sample() -> None:
         return {key: val + 1 for (key, val) in inp_dict.items()}
 
 
+#########################################################
+# generator
 def generator_sample():
     # generator is something that can be created by generator comprehension:
     a = (i for i in "a quick brown fox".split())
