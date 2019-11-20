@@ -359,8 +359,6 @@ def frozen_set_sample():
 #       - key needs to be "hashable" (basically means immutable at this point),
 #           This means list, set, dict cannot be used as key, but frozenset, string, int, tuple can.
 #       - no constrain on values, anything can be a value.
-#       - fun fact: you can use functions as key, but you cannot index the dict:
-#           `{lambda x: x: "", lambda x: x + 1: ""}[lambda x: x]` will give you an error
 #   - Important Methods:
 #       - keys (get all the keys)
 #       - values (get all the values)
@@ -383,8 +381,6 @@ def frozen_set_sample():
 #       - elements needs to be distinct
 #       - elements needs to be "hashable" (basically means immutable at this point),
 #           This means list, set, dict cannot be set elements, but frozenset, string, int, tuple can.
-#       - fun fact: you can use functions as elements, but you cannot test if the function is in the set:
-#           `(lambda x: x) in {lambda x: x}` will give you false.
 #   - important method:
 #       - union
 #       - intersection
