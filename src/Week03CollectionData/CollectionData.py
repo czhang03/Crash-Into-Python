@@ -376,7 +376,7 @@ def frozen_set_sample():
 #
 # - Set (frozen set)
 #   - Construction
-#       - explicit construction, like  `{1, 2}`
+#       - explicit construction, like `{1, 2}` or `frozenset({1, 2})`, `frozenset([1,2])`
 #       - set comprehension or the function `frozenset` followed by a generator comprehension
 #   - Property and constrain:
 #       - unordered collection, cannot be sliced or indexed
