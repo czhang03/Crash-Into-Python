@@ -79,7 +79,7 @@ def generator_zip(gen1: Iterator[int], gen2: Iterator[int]) -> Iterator[int]:
 
 
 def dict_zip_via_key(d1: Dict[Key, Val1], d2: Dict[Key, Val2]) -> Dict[Key, Tuple[Val1, Val2]]:
-    """zips tow list, two values corresponds to each other if it has the same key in `d1` and `d2`
+    """zips tow dict, two values corresponds to each other if it has the same key in `d1` and `d2`
 
     >>> dict_zip_via_key({"t1": 1, "t2": 2, "t3": 3}, {"t2": 10, "t3": 20, "t1": 30})
     {'t1': (1, 30), 't2': (2, 10), 't3': (3, 20)}
