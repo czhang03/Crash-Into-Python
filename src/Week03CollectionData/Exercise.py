@@ -18,10 +18,10 @@ Val2 = TypeVar("Val2")
 def set_filter(condition: Callable[[A], bool], s: Set[A]) -> Set[A]:
     """implement the filter on set using set comprehension
 
-    >>> set_filter(lambda n: n > 0, {-1, 1, -2, 3})
-    {1, 3}
-    >>> set_filter(lambda n: 10 % n == 0 , {1, 2, 3, 4, 5, 6, 7, 8, 9, 10})
-    {1, 2, 5, 10}
+    >>> set_filter(lambda n: n > 0, {-1, 1, -2, 3}) == {1, 3}
+    True
+    >>> set_filter(lambda n: 10 % n == 0 , {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}) == {1, 2, 5, 10}
+    True
 
     Please note, comprehension is a syntactic sugar for the function map and filter
     python `filter` function can also handle sets
@@ -36,10 +36,12 @@ def set_filter(condition: Callable[[A], bool], s: Set[A]) -> Set[A]:
 def filter_dict_val(condition: Callable[[Val], bool], d: Dict[Key, Val]) -> Dict[Key, Val]:
     """implement filter on dict using dict comprehension
 
-    >>> filter_dict_val(lambda n: n > 0, {"apple": -1, "orange": 1, "stuff": -2, "name": 3})
-    {"orange": 1, "name": 3}
-    >>> filter_dict_val(lambda s: len(s) > 3, {1: "apple", 2: "test", 3: "a", 5: "abcde", 4: "hi"})
-    {1: "apple", 2: "test", 5: "abcde"}
+    >>> res1 = filter_dict_val(lambda n: n > 0, {"apple": -1, "orange": 1, "stuff": -2, "name": 3})
+    >>> res1 == {"orange": 1, "name": 3}
+    True
+    >>> res2 = filter_dict_val(lambda s: len(s) > 3, {1: "apple", 2: "test", 3: "a", 5: "abcde", 4: "hi"})
+    >>> res2 == {1: "apple", 2: "test", 5: "abcde"}
+    True
 
     This function filter out only the corresponding key and val, where the val satisfies `condition`
     Notice, python `filter` behaves differently as this filter function on dict.
