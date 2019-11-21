@@ -194,35 +194,6 @@ def mutable_group_by(criteria: Callable[[A], B], s: FrozenSet[A]) -> FrozenSet[F
     return frozenset(res_list_fsets)
 
 
-def list_group_by(criteria: Callable[[A], B], l: List[A]) -> List[List[A]]:
-    """Group element of `l` using the given criteria.
-
-    This function will partition `l` into some smaller lists
-    where in each smaller lists given any two element `e1` and `e2`, `criteria(e1) == criteria(e2)`
-    >>> list_group_by(lambda e: e > 2, [1, 2, 3, 4])
-    [[1, 2], [3, 4]]
-    >>> list_group_by(l=[-1, 1, -1, 2, 3, -2], criteria=abs)
-    [[-1, 1, -1], [2, -2], [3]]
-
-    >>> def get_type(obj: str) -> str:
-    ...     if obj in {"orange", "apple", "pear"}:
-    ...         return "fruit"
-    ...     if obj in {"human", "pig", "chicken"}:
-    ...         return "animal"
-    ...     else:
-    ...         return "unclassified"
-    >>> list_group_by(get_type, ["human", "pear", "pig", "orange", "chicken wing"])
-    [['human', 'pig'], ['pear', 'orange'], ['chicken wing']]
-
-    - You can assume equality (==) is defined on type `B`
-    :param criteria: a function maps each element to a value of type `B`,
-        which will determine how the elements are grouped together
-    :param l: the input list
-    :return: a list of list that is partitioned in the aforementioned fashion
-    """
-    pass
-
-
 def get_word_count_dict(paragraph: str) -> Dict[str, int]:
     """This function generate the word count for the input paragraph
 
