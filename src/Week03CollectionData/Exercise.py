@@ -1,4 +1,4 @@
-from typing import List, Set, Dict, TypeVar, Callable, Generator, Tuple, Iterator, FrozenSet
+from typing import List, Set, Dict, TypeVar, Callable, Tuple, Iterator, FrozenSet
 
 #######################################
 # EXERCISE!!!!!!!!!!!!!!!!!!
@@ -60,7 +60,7 @@ def list_to_gen(l: List[A]) -> Iterator[int]:
     return (elem for elem in l)
 
 
-def generator_zip(gen1: Iterator[int], gen2: Iterator[int]) -> Iterator[int]:
+def generator_zip(gen1: Iterator[int], gen2: Iterator[int]) -> Iterator[Tuple[int, int]]:
     """python zip can zip two generator, and when iterated over, will remove all the elements in both
 
     >>> list(generator_zip(list_to_gen([1, 2, 3]), list_to_gen([10, 20, 30])))
