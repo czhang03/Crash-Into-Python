@@ -53,10 +53,15 @@ def string_sample():
     # by default strip method removes start and ending spaces
     # so `a` will be "test"
     a = "  test    ".strip()
+
     # we can let them remove some start and ending character if we want
-    # in this case strip will remove all the start and ending "s"s,
-    # `a` will be equal to   "   test    "
-    a = "ssss   test    sssss".strip("s")
+    # it will remove all combination of the character in the input string
+    # in this case strip will remove :
+    #   - all the start and ending "s"s,
+    #   - all the start and ending " "s,
+    #
+    # `a` will be equal to   "test" (notice the inner "s" will not be removed)
+    a = "s ss s   test s ss ss".strip("s ")
 
     # `join` method
     # `join` method will join a list of string with some string
