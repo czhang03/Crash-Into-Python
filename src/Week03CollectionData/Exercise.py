@@ -105,20 +105,19 @@ def dict_zip_via_key(d1: Dict[Key, Val1], d2: Dict[Key, Val2]) -> Dict[Key, Tupl
 
 
 def immutable_group_by(criteria: Callable[[A], B], s: FrozenSet[A]) -> FrozenSet[FrozenSet[A]]:
-    """Group element of `l` using the given criteria, You can not use any variable mutation in implementing this
+    """Group element of `s` using the given criteria, You can not use any variable mutation in implementing this
 
-    This function will partition `s` into some smaller lists
-    (elements in the smaller list should have the same order as in `l`),
-    where in each smaller lists given any two element `e1` and `e2`, `criteria(e1) == criteria(e2)`
+    This function will partition `s` into some smaller sets
+    where given any two element `e1` and `e2` in each partition, `criteria(e1) == criteria(e2)`
     >>> res1 = immutable_group_by(lambda e: e > 2, frozenset({1, 2, 3, 4}))
     >>> res1 == frozenset({frozenset({3, 4}), frozenset({1, 2})})
     True
-    >>> res2 = immutable_group_by(lambda s: s in {"orange", "apple", "pear"},
-    ...                         frozenset({"human", "pear", "pig", "orange"}))
-    >>> res2 == frozenset({frozenset({'pig', 'human'}), frozenset({'pear', 'orange'})})
+    >>> res2 = immutable_group_by(lambda n: abs(n), frozenset({-1, 1, -1, 2, 3, -2}))
+    >>> res2 == frozenset({frozenset({3}), frozenset({2, -2}), frozenset({1, -1})})
     True
-    >>> res3 = immutable_group_by(lambda n: abs(n), frozenset({-1, 1, -1, 2, 3, -2}))
-    >>> res3 == frozenset({frozenset({3}), frozenset({2, -2}), frozenset({1, -1})})
+    >>> res3 = immutable_group_by(lambda s: s in {"orange", "apple", "pear"},
+    ...                        frozenset({"human", "pear", "pig", "orange"}))
+    >>> res3 == frozenset({frozenset({'pig', 'human'}), frozenset({'pear', 'orange'})})
     True
 
     - You can assume equality (==) is defined on type `B`
@@ -133,10 +132,9 @@ def immutable_group_by(criteria: Callable[[A], B], s: FrozenSet[A]) -> FrozenSet
 
 
 def mutable_group_by(criteria: Callable[[A], B], s: FrozenSet[A]) -> FrozenSet[FrozenSet[A]]:
-    """Group element of `l` using the given criteria, implemented using index operation and mutation
+    """Group element of `s` using the given criteria, implemented using index operation and mutation
 
-    This function will partition `l` into some smaller lists
-    (elements in the smaller list should have the same order as in `l`),
+    This function will partition `s` into some smaller sets
     where in each smaller lists given any two element `e1` and `e2`, `criteria(e1) == criteria(e2)`
     >>> res1 = mutable_group_by(lambda e: e > 2, frozenset({1, 2, 3, 4}))
     >>> res1 == frozenset({frozenset({3, 4}), frozenset({1, 2})})
@@ -155,7 +153,7 @@ def mutable_group_by(criteria: Callable[[A], B], s: FrozenSet[A]) -> FrozenSet[F
     :param criteria: a function maps each element to a value of type `B`,
         which will determine how the elements are grouped together
     :param s: the input frozen set
-    :return: a list of list (ideally set of list) that is partitioned in the aforementioned fashion
+    :return: a set of set that is partitioned in the aforementioned fashion
     """
     # IMPORTANT
     # this is a sample implementation, this shows you that imperative thinking (use of mutation variable)
@@ -194,6 +192,35 @@ def mutable_group_by(criteria: Callable[[A], B], s: FrozenSet[A]) -> FrozenSet[F
 
     # freeze the entire list
     return frozenset(res_list_fsets)
+
+
+def list_group_by(criteria: Callable[[A], B], l: List[A]) -> List[List[A]]:
+    """Group element of `l` using the given criteria.
+
+    This function will partition `l` into some smaller lists
+    where in each smaller lists given any two element `e1` and `e2`, `criteria(e1) == criteria(e2)`
+    >>> list_group_by(lambda e: e > 2, [1, 2, 3, 4])
+    [[1, 2], [3, 4]]
+    >>> list_group_by(l=[-1, 1, -1, 2, 3, -2], criteria=abs)
+    [[-1, 1, -1], [2, -2], [3]]
+
+    >>> def get_type(obj: str) -> str:
+    ...     if obj in {"orange", "apple", "pear"}:
+    ...         return "fruit"
+    ...     if obj in {"human", "pig", "chicken"}:
+    ...         return "animal"
+    ...     else:
+    ...         return "unclassified"
+    >>> list_group_by(get_type, ["human", "pear", "pig", "orange", "chicken wing"])
+    [['human', 'pig'], ['pear', 'orange'], ['chicken wing']]
+
+    - You can assume equality (==) is defined on type `B`
+    :param criteria: a function maps each element to a value of type `B`,
+        which will determine how the elements are grouped together
+    :param l: the input list
+    :return: a list of list that is partitioned in the aforementioned fashion
+    """
+    pass
 
 
 def get_word_count_dict(paragraph: str) -> Dict[str, int]:
