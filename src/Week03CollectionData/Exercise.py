@@ -200,9 +200,12 @@ def get_word_count_dict(paragraph: str) -> Dict[str, int]:
     The each word in the input paragraph are separated by some spaces,
     and possibly followed by comma (',') or period ('.') surrounded by quotes ("'" and '"'),
     and some letter might be capitalized.
-    (common practice is to define a global constant called `PUNCTUATION = {",", ".", "'", '"'}`,
-    but you can define punctuation as a local variable here)
+
     We need to remove all the punctuation at the beginning and end of the word,
+    (common practice is to define a global constant called `PUNCTUATION = ",.'\""`,
+    but you can define punctuation as a local variable here,
+    also there is a `string` package in python, and there is a `string.punctuation`
+    handles ascii punctuation pretty well)
     and un-capitalize all the words (`lower` method will do that).
 
     >>> res1 = get_word_count_dict("A fox jumped.")
@@ -229,16 +232,16 @@ def count_pair(paragraph: str, word_pairs: Set[Tuple[str, str]]) -> Dict[Tuple[s
     By counting these words in pair, we can predict what group the author belongs in.
 
     >>> gb_us_word_pair = {("reckon", "think"), ("aubergine", "eggplant"), ("supermarket", "grocery")}
-    >>> res1 = count_pair("I reckon there should be some aubergine." gb_us_word_pair)
+    >>> res1 = count_pair("I reckon there should be some aubergine.", gb_us_word_pair)
     >>> res1 == {("reckon", "think"): (1, 0), ("aubergine", "eggplant"): (1, 0), ("supermarket", "grocery"): (0, 0)}
     True
-    >>> res2 = count_pair("Supermarket is right at the corner, I reckon." gb_us_word_pair)
+    >>> res2 = count_pair("Supermarket is right at the corner, I reckon.", gb_us_word_pair)
     >>> res2 == {("reckon", "think"): (1, 0), ("aubergine", "eggplant"): (0, 0), ("supermarket", "grocery"): (1, 0)}
     True
-    >>> res3 = count_pair("Gonna get some grocery." gb_us_word_pair)
+    >>> res3 = count_pair("Gonna get some grocery.", gb_us_word_pair)
     >>> res3 == {("reckon", "think"): (0, 0), ("aubergine", "eggplant"): (0, 0), ("supermarket", "grocery"): (0, 1)}
     True
-    >>> res4 = count_pair("" gb_us_word_pair)
+    >>> res4 = count_pair("", gb_us_word_pair)
     >>> res4 == {("reckon", "think"): (0, 0), ("aubergine", "eggplant"): (0, 0), ("supermarket", "grocery"): (0, 0)}
     True
 
